@@ -1,0 +1,214 @@
+package map.android.mr_auspicious.bukarteadmin.Adapters;
+
+import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import java.util.List;
+
+import map.android.mr_auspicious.bukarteadmin.Model.Request_;
+import map.android.mr_auspicious.bukarteadmin.Model.Search;
+import map.android.mr_auspicious.bukarteadmin.R;
+
+
+public class Search_List_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private List<Search> search_terms;
+    private Context mContext;
+    private final int VIEW_TYPE_ITEM = 0;
+    private final int VIEW_TYPE_LOADING = 1;
+    private OnLoadMoreListener onLoadMoreListener;
+    private boolean isLoading;
+    private int visibleThreshold = 5;
+    private int lastVisibleItem, totalItemCount;
+    private ClickListener clickListener;
+
+    private class LoadingViewHolder extends RecyclerView.ViewHolder {
+        public ProgressBar progressBar;
+
+        public LoadingViewHolder(View view) {
+            super(view);
+            progressBar = (ProgressBar) view.findViewById(R.id.progressBar1);
+        }
+    }
+
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView search_term;
+        TextView searched;
+
+
+        public MyViewHolder(View view) {
+            super(view);
+            search_term = (TextView) view.findViewById(R.id.term);
+            searched = (TextView) view.findViewById(R.id.searched_);
+
+        }
+    }
+
+
+    public Search_List_Adapter(RecyclerView recyclerView, Context context, List<Search> search_terms) {
+        mContext = context;
+        this.search_terms = search_terms;
+
+
+        final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                totalItemCount = linearLayoutManager.getItemCount();
+                lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
+                if (!isLoading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
+                    if (onLoadMoreListener != null) {
+                        onLoadMoreListener.onLoadMore();
+                    }
+                    isLoading = true;
+                }
+            }
+        });
+    }
+
+
+//    public Search_List_Adapter(RecyclerView recyclerView, Context context, List<Request_> products, ClickListener clickListener) {
+//        mContext = context;
+//        this.requests = products;
+//
+//
+//        final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+//
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                totalItemCount = linearLayoutManager.getItemCount();
+//                lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
+//                if (!isLoading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
+//                    if (onLoadMoreListener != null) {
+//                        onLoadMoreListener.onLoadMore();
+//                    }
+//                    isLoading = true;
+//                }
+//            }
+//        });
+//
+//        this.clickListener = clickListener;
+//    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {
+
+        if (viewType == VIEW_TYPE_ITEM) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.search_term_layout, parent, false);
+            return new MyViewHolder(view);
+        } else if (viewType == VIEW_TYPE_LOADING) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_loading, parent, false);
+            return new LoadingViewHolder(view);
+        }
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof MyViewHolder){
+            MyViewHolder myViewHolder = (MyViewHolder) holder;
+
+            Search search = search_terms.get(position);
+            myViewHolder.search_term.setText(search.getBook_name());
+            myViewHolder.searched.setText(search.getTime());
+
+        }else if (holder instanceof  LoadingViewHolder){
+            LoadingViewHolder loadingViewHolder = (LoadingViewHolder) holder;
+            loadingViewHolder.progressBar.setIndeterminate(true);
+        }
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return search_terms == null ? 0 : search_terms.size();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+
+    public void setLoaded() {
+        isLoading = false;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return search_terms.get(position) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
+    }
+
+
+    public void setOnLoadMoreListener(OnLoadMoreListener mOnLoadMoreListener) {
+        this.onLoadMoreListener = mOnLoadMoreListener;
+    }
+
+    public interface ClickListener{
+        void onClick(View view,int position);
+        void onLongClick(View view,int positio);
+    }
+
+    public interface OnLoadMoreListener {
+        void onLoadMore();
+    }
+
+    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private GestureDetector gestureDetector;
+        private ClickListener clickListener;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final ClickListener clickListener) {
+            this.clickListener = clickListener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && clickListener != null) {
+                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
+                clickListener.onClick(child, rv.getChildPosition(child));
+            }
+
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+    }
+}

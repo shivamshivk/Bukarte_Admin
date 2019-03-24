@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Name -"
+                        android:textSize="14sp"
+                        android:id="@+id/coupon_id"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textStyle=""
+                        android:layout_toRightOf="@+id/coupon_id"
+                        android:id="@+id/b_name"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/text"
+                        android:text="1hiwbecbeb"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Author Name -"
+                        android:textSize="14sp"
+                        android:id="@+id/valid_from"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_toRightOf="@+id/valid_from"
+                        android:id="@+id/author_name"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#23a418"
+                        android:text="11th Sept 2017"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher -"
+                        android:textSize="14sp"
+                        android:id="@+id/publisher_t"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_toRightOf="@+id/publisher_t"
+                        android:id="@+id/publisher"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/text"
+                        android:text="11th Sept 2017"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Requested At -"
+                        android:textSize="14sp"
+                        android:id="@+id/requested_t"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_toRightOf="@+id/requested_t"
+                        android:id="@+id/request_time"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/colorPrimary"
+                        android:text="11th Sept 2017"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C_ID -"
+                        android:textSize="14sp"
+                        android:id="@+id/c_id_t"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_toRightOf="@+id/c_id_t"
+                        android:id="@+id/c_id"
+                        android:layout_marginLeft="10dp"
+                        android:text="11th Sept 2017"/>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:text="Share"
+                        android:layout_margin="6dp"
+                        android:id="@+id/share_btn"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:text="Call"
+                        android:layout_margin="6dp"
+                        android:id="@+id/share_btn_1"
+                    />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:text="Avail It"
+                        android:layout_margin="6dp"
+                        android:id="@+id/avail_btn_1"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+</RelativeLayout>

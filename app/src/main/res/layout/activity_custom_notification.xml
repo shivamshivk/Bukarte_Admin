@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:layout_height="?attr/actionBarSize"
+                    android:titleTextColor="#FFF"
+                    app:theme="@style/Mytheme"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    android:minHeight="?attr/actionBarSize"
+                    tools:targetApi="m">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="notificationbhejo.com"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"/>
+
+                </android.support.v7.widget.Toolbar>
+
+            </LinearLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="18sp"
+                android:text="Select your Notification Type"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/req_book_avail"
+                android:text="Book Available (Requested Book)"
+                android:layout_marginBottom="5dp"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Order Notification"
+                android:id="@+id/order_not"
+                android:layout_marginBottom="5dp"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                />
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/req_book_unavail"
+                android:text="Book Unavailable (Requested Books)"
+                android:layout_marginBottom="5dp"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Welcome 2 Bukarte"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                android:id="@+id/welcome_not"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:id="@+id/lin_layout"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/order_layout"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_margin="16dp"
+                        android:text="Order ID - "
+                        android:id="@+id/order_text"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/order_id"
+                        android:layout_toEndOf="@+id/order_text"
+                        android:layout_toRightOf="@id/order_text"
+                        android:layout_marginRight="16sp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:id="@+id/cs_layout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_margin="16dp"
+                        android:text="Customer ID -"
+                        android:id="@+id/cs_text"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/cs_id"
+                        android:layout_toEndOf="@+id/cs_text"
+                        android:layout_toRightOf="@id/cs_text"
+                        android:layout_marginRight="16sp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:textSize="17sp"
+                    android:textColor="#000"
+                    android:text="Fill the above &amp; You are good to Go"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:id="@+id/dispatch_text"
+                    android:text="Customer ID likho be "
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccent"
+                    android:text="Send "
+                    android:id="@+id/send_notification"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+

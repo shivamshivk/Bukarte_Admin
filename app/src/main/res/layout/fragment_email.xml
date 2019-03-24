@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="From"
+                android:id="@+id/from_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/inpuy_from"
+                android:layout_toEndOf="@+id/from_text"
+                android:layout_toRightOf="@id/from_text"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="to Whom?"
+                android:id="@+id/to_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/to_text"
+                android:layout_toRightOf="@id/to_text"
+                android:layout_marginRight="16sp"
+                android:id="@+id/input_to"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="Name?"
+                android:id="@+id/name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/name"
+                android:layout_toRightOf="@id/name"
+                android:layout_marginRight="16sp"
+                android:id="@+id/input_name"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="Subject?"
+                android:id="@+id/subject_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/input_subject"
+                android:layout_toEndOf="@+id/subject_text"
+                android:layout_toRightOf="@id/subject_text"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="line 1?"
+                android:id="@+id/line1_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/input_line"
+                android:layout_toEndOf="@+id/line1_text"
+                android:layout_toRightOf="@id/line1_text"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="line 2?"
+                android:id="@+id/line2_text"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/input_line2"
+                android:layout_toEndOf="@+id/line2_text"
+                android:layout_toRightOf="@id/line2_text"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="Puch Line"
+                android:id="@+id/punch_line"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textUri"
+                android:id="@+id/input_punch_line"
+                android:layout_toEndOf="@+id/punch_line"
+                android:layout_toRightOf="@id/punch_line"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_margin="16sp"
+                android:text="URL"
+                android:id="@+id/url"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/url"
+                android:layout_toRightOf="@id/url"
+                android:id="@+id/input_url"
+                android:inputType="textUri"
+                android:layout_marginRight="16sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/devider"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Send"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/send_email"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

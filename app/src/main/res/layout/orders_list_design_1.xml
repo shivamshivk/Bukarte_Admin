@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:elevation="2dp"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="lollipop">
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lin"
+        android:orientation="horizontal"
+        tools:targetApi="lollipop"
+        tools:ignore="UselessParent">
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="110dp"
+            android:id="@+id/iv"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Maths Ncert"
+                android:textSize="13sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="normal"
+                android:id="@+id/t1"
+                android:typeface="normal"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                tools:text="QTY - 1"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textColor="#415351"
+                android:textSize="10sp"
+                android:id="@+id/quantity"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="hey"
+                    android:textColor="#2933b7"
+                    android:textSize="12sp"
+                    android:id="@+id/t2"/>
+
+
+            </RelativeLayout>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                tools:text="ORDERED ON - 28/11/2017"
+                android:textColor="#455156"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif"
+                android:id="@+id/t4"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/lin"
+        android:background="@color/devider"
+        android:id="@+id/devider"
+        android:layout_marginRight="0.5dp"
+        android:layout_marginLeft="0.5dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/devider"
+        android:orientation="horizontal"
+        android:id="@+id/det_lin"
+        android:visibility="visible">
+
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:id="@+id/cancel_layout"
+            android:layout_below="@+id/devider"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/cancel_text"
+                android:textAllCaps="true"
+                android:layout_centerInParent="true"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:id="@+id/cancel_click"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cancel_text"
+                android:src="@drawable/close_black"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/devider"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:id="@+id/track_layout"
+            android:layout_below="@+id/devider"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Track"
+                android:id="@+id/track_text"
+                android:textAllCaps="true"
+                android:layout_centerInParent="true"
+                android:textColor="@color/text"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/track_text"
+                android:src="@drawable/loc"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

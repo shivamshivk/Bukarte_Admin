@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_screen"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1"
+    tools:context="mr_auspicious.shivam_kr_shiv.com.bukarte.Activities.Main_Handler_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar_layout"
+            >
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:background="@color/colorPrimary"
+                app:theme="@style/Mytheme"
+                android:minHeight="?attr/actionBarSize">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Orders"
+                    android:id="@+id/my_orders"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/empty_cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_below="@+id/toolbar_layout">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/wishlist"
+                android:layout_marginTop="100dp"
+                android:id="@+id/cart_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cart_img"
+                android:text="Nothing to show"
+                android:textSize="20sp"
+                android:id="@+id/empty_text"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/text"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_centerHorizontal="true"
+                tools:targetApi="jelly_bean" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/orders_layout"
+            android:layout_below="@+id/toolbar_layout">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:visibility="visible"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/progress_Bar_comp"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+

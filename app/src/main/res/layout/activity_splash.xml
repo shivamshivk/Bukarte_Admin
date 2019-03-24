@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:id="@+id/txt"
+        android:text="Bukarte Admin"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/txt"
+        android:id="@+id/et_layout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et1"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:hint="Enter your Pass Code"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/btn"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/et_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
